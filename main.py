@@ -277,7 +277,7 @@ class Concert(object):
                     ticket_num_up.click()
                 buybutton.click()
                 self.status = 4
-                WebDriverWait(self.driver, 2, 0.1).until(
+                WebDriverWait(self.driver, 3, 0.1).until(
                     EC.title_contains("确认"))
                 break
             else:
@@ -291,6 +291,7 @@ class Concert(object):
                 EC.presence_of_element_located((By.XPATH, '//*[@id="dmViewerBlock_DmViewerBlock"]/div[2]/div/div')))
             people = self.driver.find_elements(
                 By.XPATH, '//*[@id="dmViewerBlock_DmViewerBlock"]/div[2]/div/div')
+            sleep(0.2)
 
             for i in self.viewer_person:
                 if i > len(people):
@@ -303,6 +304,7 @@ class Concert(object):
                 EC.presence_of_element_located((By.XPATH, '//*[@id="dmOrderSubmitBlock_DmOrderSubmitBlock"]/div[2]/div/div[2]/div[3]/div[2]')))
             comfirmBtn = self.driver.find_element(
                 By.XPATH, '//*[@id="dmOrderSubmitBlock_DmOrderSubmitBlock"]/div[2]/div/div[2]/div[3]/div[2]')
+            sleep(0.5)
             comfirmBtn.click()
             # 判断title是不是支付宝
             print(u"###等待跳转到--付款界面--，可自行刷新，若长期不跳转可选择-- CRTL+C --重新抢票###")

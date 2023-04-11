@@ -3,19 +3,15 @@
         1
     ],
     "sess": [
-        5,
-        4,
-        3,
-        2,
         1
     ],
     "price": [
         6,
-        5,
         1,
         2,
         3,
-        4
+        4,
+        5
     ],
     "real_name": [
         1
@@ -23,12 +19,12 @@
     "nick_name": "wuliang9524",
     "ticket_num": 2,
     "viewer_person": [
-        2,
-        1
+        1,
+        2
     ],
     "driver_path": "C:\\Program Files\\Google\\Chrome\\Application\\chromedriver2.exe",
     "damai_url": "https://www.damai.cn/",
-    "target_url": "https://m.damai.cn/damai/detail/item.html?itemId=709534959083&from=appshare&sqm=dianying.h5.unknown.value.hlw_a2o71_28004194&spm=a2o71.project.0.center",
+    "target_url": "https://m.damai.cn/damai/detail/item.html?itemId=709623916273&spm=a2o71.broadlist.list.d1.486cb9665czGUD",
     "comment": {
         "title": "comment 下的所有内容为自定义注释,无实际含义",
         "date": "日期序号,已经弃用",
@@ -43,7 +39,6 @@
         "target_url": "购票的实际地址,需要使用手机端的地址,域名: https://m.damai.cn/ 开头",
         "queue": {
             "title": "列入待抢的链接地址",
-            "xuwei_0331": "https://m.damai.cn/damai/detail/item.html?itemId=710200043561&spm=a2o71.broadlist.list.d0.27e4b966KfV6Hy",
             "zhoujielun_0403": "https://m.damai.cn/damai/detail/item.html?itemId=607865020360&from=appshare&sqm=dianying.h5.unknown.value.hlw_a2o71_28004194&prev_page=8hu5vjnq54&spm=a2o71.28004194.785344.item_horizontal_3"
         }
     }
