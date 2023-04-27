@@ -13,28 +13,52 @@
 
 ```json
 {
-    "date": [1],
-    "sess": [1],
-    "price": [2],	
-    "real_name": [1],
+    "date": [
+        14
+    ],
+    "sess": [
+        1,
+        2
+    ],
+    "price": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+    ],
+    "real_name": [
+        1
+    ],
     "nick_name": "",
-    "ticket_num": 3,
-    "driver_path": "./chromedriver.exe",
+    "ticket_num": 1,
+    "viewer_person": [
+        2
+    ],
+    "driver_path": "C:\\Program Files\\Google\\Chrome\\Application\\chromedriver2.exe",
     "damai_url": "https://www.damai.cn/",
-    "target_url": "https://m.damai.cn/damai/detail/item.html?itemId=704494827883&spm=a2o71.category.itemlist.ditem_3"
+    "target_url": "https://m.damai.cn/damai/detail/item.html?itemId=708250808776&spm=a2o71.home.snatch_ticket.item&from=appshare&sqm=dianying.h5.unknown.value.hlw_a2o71_28004194",
+    "comment": {
+        "title": "comment 下的所有内容为自定义注释,无实际含义",
+        "date": "日期序号,仅支持一个日期选择",
+        "sess": "场次序号,优先选中的场次序号放在前,填写的场次序号若大于实际场次序号,则会选中实际场次序号最大的",
+        "price": "票档序号,优先选中的票档序号放在前,填写的票档序号若大于实际票档序号,则会选中实际票档序号最大的",
+        "real_name": "实名者序号,已经弃用",
+        "nick_name": "用户昵称,已经弃用",
+        "ticket_num": "购买票数,购买票数与观影人序号的数量务必一致",
+        "viewer_person": "观影人序号(预先添加实名观影人),优先选中的序号放在前,填写的序号若大于实际序号,则会放弃选中",
+        "driver_path": "驱动地址",
+        "damai_url": "大麦首页地址,用于登录",
+        "target_url": "购票的实际地址,需要使用手机端的地址,域名: https://m.damai.cn/ 开头",
+        "queue": {
+            "title": "列入待抢的链接地址",
+            "zhoujielun_0403": "https://m.damai.cn/damai/detail/item.html?itemId=607865020360&from=appshare&sqm=dianying.h5.unknown.value.hlw_a2o71_28004194&prev_page=8hu5vjnq54&spm=a2o71.28004194.785344.item_horizontal_3"
+        }
+    }
 }
 
 ```
-
-- target_url 抢票的网页，必须是移动端网页，即m.damai.cn域名下的网页。
-- damai_url 一般不需要更改，用于登录
-- ticket_num 抢票张数
-- date 日期 这个版本未测试包含日期筛选的网页，目前大概率不可用
-- sess 场次，对应买票页面弹框的场次，1代表第一个按钮，数组表示多个可选项
-- price 价位，对应买票页面弹框的价格，1代表第一个按钮，数组表示多个可选
-- driver_path 对应当前电脑Chrome浏览器版本的驱动文件
-- real_name 结算页面选择第几个实名的人
-- nick_name 没什么用
 
 ## 注意事项
 
