@@ -27,7 +27,7 @@
     "target_url": "https://m.damai.cn/damai/detail/item.html?itemId=708250808776&spm=a2o71.home.snatch_ticket.item&from=appshare&sqm=dianying.h5.unknown.value.hlw_a2o71_28004194",
     "comment": {
         "title": "comment 下的所有内容为自定义注释,无实际含义",
-        "date": "日期序号,已经弃用",
+        "date": "日期序号,仅支持一个日期选择",
         "sess": "场次序号,优先选中的场次序号放在前,填写的场次序号若大于实际场次序号,则会选中实际场次序号最大的",
         "price": "票档序号,优先选中的票档序号放在前,填写的票档序号若大于实际票档序号,则会选中实际票档序号最大的",
         "real_name": "实名者序号,已经弃用",
