@@ -173,17 +173,23 @@ class Concert(object):
                 EC.presence_of_element_located((By.CSS_SELECTOR, '.sku-pop-wrapper')))
 
             try:
-                # 日期选择,暂不支持日期
+                # 日期选择
                 toBeClicks = []
-                date = None                                      
+                try:
+                    date = WebDriverWait(self.driver, 2, 0.1).until(
+                        EC.presence_of_element_located((By.CLASS_NAME, 'bui-dm-sku-calendar')))
+                except Exception as e:
+                    date = None
                 if date is not None:
-                    date_list = date.find_element(
-                        by=By.XPATH, value="//div[@class='wh_content_item']//div[starts-with(@class,'wh_item_date')]")  # 选定日期
-                    # print('可选日期数量为：{}'.format(len(date_list)))
+                    date_list = date.find_elements(
+                        by=By.CLASS_NAME, value='bui-calendar-day-box')
                     for i in self.date:
                         j: WebElement = date_list[i-1]
                         toBeClicks.append(j)
                         break
+                    for i in toBeClicks:
+                        i.click()
+                        sleep(0.05)
 
                 # 选定场次
                 session = WebDriverWait(self.driver, 2, 0.1).until(
@@ -243,14 +249,14 @@ class Concert(object):
 
                 buybutton = box.find_element(
                     by=By.CLASS_NAME, value='sku-footer-buy-button')
-                sleep(0.5)
+                sleep(1.0)
                 buybutton_text = buybutton.text
                 if buybutton_text == "":
                     raise Exception(u"***Error: 提交票档按钮文字获取为空,适当调整 sleep 时间***")
 
 
                 try:
-                    WebDriverWait(self.driver, 1, 0.1).until(
+                    WebDriverWait(self.driver, 2, 0.1).until(
                     EC.presence_of_element_located((By.CLASS_NAME, 'bui-dm-sku-counter')))
                 except:
                     raise Exception(u"***购票按钮未开始***")
@@ -308,11 +314,34 @@ class Concert(object):
             comfirmBtn.click()
             # 判断title是不是支付宝
             print(u"###等待跳转到--付款界面--，可自行刷新，若长期不跳转可选择-- CRTL+C --重新抢票###")
-            try:
-                WebDriverWait(self.driver, 3600, 0.1).until(
-                    EC.title_contains('支付宝'))
-            except:
-                raise Exception(u'***Error: 长期跳转不到付款界面***')
+
+            while True:
+                try:
+                    WebDriverWait(self.driver, 4, 0.1).until(
+                        EC.title_contains('支付宝'))
+                except:
+                    # 通过人工判断是否继续等待支付宝跳转界面
+                    c ="""                                                                                                                      
+                                               
+等待输入指示：                                                                                
+ 1.抢票成功
+ 2.抢票失败,未知原因没跳转到支付宝界面,进入下一轮抢票
+    """
+
+                    step = input('等待跳转到支付宝页面,请输入:')
+                    if step == '1':
+                        # 成功
+                        break
+                    # elif step == '2':
+                    #     # 有遮罩弹窗,包括各种错误提示
+                    #     try:
+                    #         confirm = WebDriverWait(self.driver, 3, 0.1).until(
+                    #             EC.presence_of_element_located((By.ID, 'confirm')))
+                    #     except:
+                    #         raise Exception(u"***Error: 页面刷新出错***")
+                    else:
+                        raise Exception(u'***Error: 长期跳转不到付款界面***')
+                        break
 
             self.status = 6
             print(u'###成功提交订单,请手动支付###')
