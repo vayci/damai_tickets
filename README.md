@@ -6,7 +6,7 @@
 > 
 > 2023.03.20 对应页面更新了class_name, 但是出现新机制触发机器验证无法完成下单
 >
-> ![image](https://user-images.githubusercontent.com/55338151/226281976-a3fb3bf8-5b02-4c1d-97d1-367ad06d6de3.png)
+> 2023.04.27 增加日期选择
 
 
 ## 配置文件
