@@ -1,30 +1,30 @@
 {
     "date": [
-        1
+        14
     ],
     "sess": [
-        1
+        1,
+        2
     ],
     "price": [
-        6,
         1,
         2,
         3,
         4,
-        5
+        5,
+        6
     ],
     "real_name": [
         1
     ],
-    "nick_name": "wuliang9524",
-    "ticket_num": 2,
+    "nick_name": "",
+    "ticket_num": 1,
     "viewer_person": [
-        1,
         2
     ],
     "driver_path": "C:\\Program Files\\Google\\Chrome\\Application\\chromedriver2.exe",
     "damai_url": "https://www.damai.cn/",
-    "target_url": "https://m.damai.cn/damai/detail/item.html?itemId=709623916273&spm=a2o71.broadlist.list.d1.486cb9665czGUD",
+    "target_url": "https://m.damai.cn/damai/detail/item.html?itemId=708250808776&spm=a2o71.home.snatch_ticket.item&from=appshare&sqm=dianying.h5.unknown.value.hlw_a2o71_28004194",
     "comment": {
         "title": "comment 下的所有内容为自定义注释,无实际含义",
         "date": "日期序号,已经弃用",
